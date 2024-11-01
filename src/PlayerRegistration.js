@@ -21,20 +21,18 @@ function PlayerRegistration() {
       <h2>Cadastro de Jogadores</h2>
       <input
         type="text"
-        placeholder="Nome do Jogador 1"
+        placeholder="Nome do Jogador X"
         value={player1}
         onChange={(e) => setPlayer1(e.target.value)}
       />
-	  <p/>
       {mode === '2' && (
         <input
           type="text"
-          placeholder="Nome do Jogador 2"
+          placeholder="Nome do Jogador O"
           value={player2}
           onChange={(e) => setPlayer2(e.target.value)}
         />
       )}
-	  <p/>
       <button onClick={handleSubmit}>Iniciar Jogo</button>
     </div>
   );

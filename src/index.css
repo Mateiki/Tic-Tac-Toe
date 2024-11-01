@@ -1,22 +1,60 @@
-/* index.css */
-.app {
-  text-align: center;
+/* Reset básico para remover margens e paddings padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* Cor de fundo suave */
+  color: #333; /* Cor do texto */
+}
+
+/* Centraliza conteúdo vertical e horizontalmente em toda a página */
+.home-page,
+.registration-page,
+.game-page {
   height: 100vh; /* Altura total da viewport */
   display: flex;
   flex-direction: column;
   justify-content: center; /* Centraliza verticalmente */
   align-items: center; /* Centraliza horizontalmente */
-  margin: 0; /* Remove margens padrão */
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff; /* Fundo branco para contraste */
+  padding: 20px;
+}
+
+/* Estilização da área do tabuleiro */
+.board-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px; /* Ajusta a largura do tabuleiro */
+  background-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra leve para destacar */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(2, 100px);
+  grid-gap: 10px; /* Espaçamento entre os quadrados */
+  align-items: center;
+  justify-content: center;
 }
 
 .board {
   display: grid;
   grid-template-columns: repeat(3, 100px);
-  grid-gap: 5px;
-  margin: 20px auto;
+  grid-gap: 10px; /* Espaçamento entre os quadrados */
 }
 
+/* Estilização dos quadrados do tabuleiro */
 .square {
   width: 100px;
   height: 100px;
@@ -25,5 +63,67 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border: 1px solid #000;
+  border: 2px solid #ddd; /* Bordas mais suaves */
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: background-color 0.3s, transform 0.2s; /* Animação suave */
+  background-color: #f7f7f7
+}
+
+.square:hover {
+  background-color: lightgreen; /* Fundo mais claro ao passar o mouse */
+  transform: scale(1.05); /* Efeito de zoom */
+}
+
+/* Estilização dos botões */
+button {
+  background-color: #4caf50; /* Cor de fundo verde */
+  color: white; /* Cor do texto branco */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; /* Animação suave */
+}
+
+button:hover {
+  background-color: #45a049; /* Cor de fundo mais escura ao passar o mouse */
+  transform: translateY(-2px); /* Leve elevação ao passar o mouse */
+}
+
+.navegacao {
+  margin: 10px;
+  font-size: 18px;
+}
+
+/* Estilização dos inputs */
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px;
+  width: 100%; /* Largura total do elemento pai */
+  max-width: 300px; /* Limita a largura máxima */
+}
+
+input:focus {
+  outline: none;
+  border-color: #4caf50; /* Cor da borda ao focar no input */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3); /* Sombra leve */
+}
+
+/* Pequenas melhorias na usabilidade */
+h3 {
+  margin: 10px;
+  color: #4caf50; /* Cor verde para destacar o título */
+}
+
+h2 {
+  margin: 10px;
+  color: #000000; /* Cor verde para destacar o título */
+}
+
+p {
+  margin: 5px 0;
+  font-size: 14px;
 }

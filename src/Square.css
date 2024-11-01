@@ -1,0 +1,20 @@
+.square {
+  width: 100px;
+  height: 100px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid #000;
+}
+
+.winning-square {
+  background-color: #4caf50; /* Cor de fundo para a célula vencedora */
+}
+
+img {
+  width: 80px;
+  height: 80px;
+}
+

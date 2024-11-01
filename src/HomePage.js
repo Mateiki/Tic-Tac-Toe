@@ -6,10 +6,9 @@ function HomePage() {
 
   return (
     <div className="home-page">
-      <h1>Bem-vindo ao Jogo da Velha</h1>
-      <button onClick={() => navigate('/register?mode=1')}>Um Jogador</button>
-	  <p/>
-      <button onClick={() => navigate('/register?mode=2')}>Dois Jogadores</button>
+      <h1>Jogo da Velha</h1>
+      <button className="navegacao" onClick={() => navigate('/register?mode=1')}>Um Jogador</button>
+      <button className="navegacao" onClick={() => navigate('/register?mode=2')}>Dois Jogadores</button>
     </div>
   );
 }
