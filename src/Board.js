@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Square from './Square';
+import { useNavigate } from 'react-router-dom';
 
 function Board({ jogadorA, jogadorB }) {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(true);
-
+  
+  const navigate = useNavigate();
   const result = calculateWinner(squares);
   const winner = result ? result.winner : null;
   const winningLine = result ? result.winningLine : [];
@@ -45,6 +47,10 @@ function Board({ jogadorA, jogadorB }) {
     resetGame();
   }
 
+  function HomePage() {
+    navigate('/');
+  }
+  
   return (
     <div className="board-container">
 	  <h2>{jogadorA} (X): {score.X} {jogadorB} (O): {score.O}</h2>
@@ -60,9 +66,12 @@ function Board({ jogadorA, jogadorB }) {
         ))}
       </div>
       <h2>{status}</h2>
-	  <div className="menu">
-		  <button onClick={resetGame}>Novo Jogo</button>
-		  <button onClick={resetScore}>Reiniciar Placar</button> 
+	    <div className="menu">
+		    <button onClick={resetGame}>Novo Jogo</button>
+		    <button onClick={resetScore}>Reiniciar Placar</button> 
+      </div>
+      <div className="inicio">
+        <button onClick={HomePage}>Início</button>
       </div>	  
     </div>
   );

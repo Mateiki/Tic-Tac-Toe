@@ -80,6 +80,7 @@ button {
   color: white; /* Cor do texto branco */
   border: none;
   padding: 10px 20px;
+  margin: 5px 0px;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
