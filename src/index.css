@@ -26,6 +26,18 @@ body {
   padding: 20px;
 }
 
+.icon-choice{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.icon-buttons{
+  flex-direction: row;
+  gap: 50px;
+  display: flex;
+  align-self: center;
+}
+
 /* Estilização da área do tabuleiro */
 .board-container {
   display: flex;
@@ -74,7 +86,19 @@ body {
   transform: scale(1.05); /* Efeito de zoom */
 }
 
-/* Estilização dos botões */
+.img-button{
+  background-color: white;
+}
+
+.img-button:hover {
+  background-color: #ffffff; 
+  transform: translateY(-2px); /* Leve elevação ao passar o mouse */
+}
+
+.img-button:active{
+  background-color: red;
+}
+
 button {
   background-color: #4caf50; /* Cor de fundo verde */
   color: white; /* Cor do texto branco */
