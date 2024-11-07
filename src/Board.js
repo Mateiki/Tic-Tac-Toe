@@ -19,8 +19,14 @@ function Board() {
     if (winner) {
       const newScore = { ...score, [winner]: score[winner] + 1 };
       setScore(newScore);
+    } else if (!isPlayer1Next && jogadorB === 'Computador') {
+      // Faz o bot jogar após o turno do Jogador 1
+      const botMove = getRandomMove(squares);
+      if (botMove !== -1) {
+        setTimeout(() => handleClick(botMove), 500); // Espera um pouco para simular o "pensamento" do bot
+      }
     }
-  }, [winner]);
+  }, [winner, isPlayer1Next]);
 
   const status = winner
     ? `Vencedor: ${winner === player1Symbol ? jogadorA : jogadorB}`
@@ -35,6 +41,15 @@ function Board() {
     newSquares[index] = isPlayer1Next ? player1Symbol : player2Symbol;
     setSquares(newSquares);
     setIsPlayer1Next(!isPlayer1Next);
+  }
+
+  function getRandomMove(squares) {
+    const emptySquares = squares
+      .map((value, index) => (value === null ? index : null))
+      .filter((index) => index !== null);
+
+    if (emptySquares.length === 0) return -1;
+    return emptySquares[Math.floor(Math.random() * emptySquares.length)];
   }
 
   function resetGame() {
